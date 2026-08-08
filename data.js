@@ -5,7 +5,7 @@
 
 window.TRIP_DATA = {
   tripInfo: {
-    title: "NGO2026 Japan Travel",
+    title: "Admin Meeting @Japan : Sep 2026",
     subtitle: "Bangkok - Nagoya - Tokyo - Hachioji - Tsuchiura",
     passengers: ["VARONG SUPABANPOT", "SARAWUT SUKPRASERT", "SUTUNYA SUKPRASERT"],
     startDate: "2026-09-03",
