@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NGO2026 - Japan Travel Itinerary (Day 0 - Day 6)</title>
+  <meta name="description" content="7-Day Japan Travel Itinerary (3 Sep 2026 - 9 Sep 2026) for Nagoya, Tokyo, Hachioji, and Tsuchiura." />
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Sticky Glass Navigation Header -->
+  <header class="app-header">
+    <div class="top-bar">
+      <a href="#" class="brand-logo" onclick="switchTab('overview')">
+        <span class="flag-badge">🇯🇵</span>
+        <div>
+          <div class="brand-title">NGO2026 JAPAN TRIP</div>
+          <div class="brand-subtitle">Japan Travel Itinerary • Sep 3–9, 2026</div>
+        </div>
+      </a>
+
+      <div class="top-actions">
+        <div class="badge-travelers" onclick="openFlightModal('flight-outbound')" title="Click to view Flight Boarding Pass & Travelers">
+          <i data-lucide="users"></i>
+          <span>3 Travelers</span>
+        </div>
+        <button class="btn-icon" onclick="window.print()" title="Print / Export PDF">
+          <i data-lucide="printer"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 7 Day Tabs Navigation -->
+    <nav class="sub-nav" id="sub-nav">
+      <button class="nav-tab overview-tab active" data-tab="overview" onclick="switchTab('overview')">
+        <span class="tab-day">📊 Overview</span>
+        <span class="tab-date">Trip Summary</span>
+      </button>
+      <button class="nav-tab" data-tab="day-0" onclick="switchTab('day-0')">
+        <span class="tab-day">Day 0</span>
+        <span class="tab-date">Thu 3 Sep</span>
+      </button>
+      <button class="nav-tab" data-tab="day-1" onclick="switchTab('day-1')">
+        <span class="tab-day">Day 1</span>
+        <span class="tab-date">Fri 4 Sep</span>
+      </button>
+      <button class="nav-tab" data-tab="day-2" onclick="switchTab('day-2')">
+        <span class="tab-day">Day 2</span>
+        <span class="tab-date">Sat 5 Sep</span>
+      </button>
+      <button class="nav-tab" data-tab="day-3" onclick="switchTab('day-3')">
+        <span class="tab-day">Day 3</span>
+        <span class="tab-date">Sun 6 Sep</span>
+      </button>
+      <button class="nav-tab" data-tab="day-4" onclick="switchTab('day-4')">
+        <span class="tab-day">Day 4</span>
+        <span class="tab-date">Mon 7 Sep</span>
+      </button>
+      <button class="nav-tab" data-tab="day-5" onclick="switchTab('day-5')">
+        <span class="tab-day">Day 5</span>
+        <span class="tab-date">Tue 8 Sep</span>
+      </button>
+      <button class="nav-tab" data-tab="day-6" onclick="switchTab('day-6')">
+        <span class="tab-day">Day 6</span>
+        <span class="tab-date">Wed 9 Sep</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+
+    <!-- Search & Filter Controls -->
+    <section class="filter-bar">
+      <div class="search-box">
+        <i data-lucide="search"></i>
+        <input type="text" id="search-input" placeholder="ค้นหาจุดหมาย, สายรถไฟ, โรงงาน, เที่ยวบิน (e.g. Shinkansen, TG 644, Kanda)..." oninput="handleSearch()" />
+      </div>
+
+      <div class="filter-tags">
+        <button class="filter-tag active" data-cat="all" onclick="filterCategory('all')">ทั้งหมด</button>
+        <button class="filter-tag" data-cat="flight" onclick="filterCategory('flight')">✈️ Flights</button>
+        <button class="filter-tag" data-cat="transport" onclick="filterCategory('transport')">🚆 Trains & Bus</button>
+        <button class="filter-tag" data-cat="hotel" onclick="filterCategory('hotel')">🏨 Hotels</button>
+        <button class="filter-tag" data-cat="meeting" onclick="filterCategory('meeting')">💼 Meetings</button>
+        <button class="filter-tag" data-cat="food" onclick="filterCategory('food')">🍱 Dining</button>
+      </div>
+    </section>
+
+    <!-- App Dynamic Content Mount -->
+    <div id="app-content"></div>
+
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Modal View -->
+  <div id="app-modal" class="modal-backdrop" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModalDirect()"><i data-lucide="x"></i></button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Load Data and Application Logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

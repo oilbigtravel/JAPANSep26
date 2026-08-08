@@ -1,0 +1,938 @@
+/* NGO2026 - Japan Business & Travel (Apple Style Compact Theme) */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-dark: #f2f2f7;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --bg-glass: #e5e5ea;
+  --border-glass: rgba(60, 60, 67, 0.12);
+  --border-glow: rgba(0, 122, 255, 0.2);
+  
+  --text-main: #1c1c1e;
+  --text-muted: #48484a;
+  --text-dim: #8e8e93;
+  
+  --cyan-accent: #007aff;
+  --blue-accent: #007aff;
+  --indigo-accent: #5856d6;
+  --purple-accent: #af52de;
+  --pink-accent: #ff2d55;
+  --emerald-accent: #34c759;
+  --amber-accent: #ff9500;
+  --red-accent: #ff3b30;
+
+  --gradient-primary: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+  --gradient-card: linear-gradient(180deg, #ffffff 0%, #f2f2f7 100%);
+
+  --radius-xl: 14px;
+  --radius-lg: 10px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+  
+  --transition-fast: all 0.15s ease-in-out;
+  --transition-normal: all 0.25s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Kanit', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.45;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Apple Glass Top Bar */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(60, 60, 67, 0.12);
+}
+
+.top-bar {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.flag-badge {
+  font-size: 1.1rem;
+  background: rgba(120, 120, 128, 0.08);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(60, 60, 67, 0.08);
+}
+
+.brand-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.4px;
+}
+
+.brand-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge-travelers,
+.badge-pnr {
+  background: rgba(0, 122, 255, 0.08);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  color: #007aff;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.badge-travelers:hover,
+.badge-pnr:hover {
+  background: rgba(0, 122, 255, 0.15);
+}
+
+.btn-icon {
+  background: rgba(120, 120, 128, 0.08);
+  border: 1px solid rgba(60, 60, 67, 0.08);
+  color: var(--text-main);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: rgba(120, 120, 128, 0.16);
+}
+
+/* Day Sub-Navigation Tabs (Apple Segment Control Look) */
+.sub-nav {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 6px 20px 10px 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sub-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-tab {
+  background: rgba(118, 118, 128, 0.08);
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  padding: 5px 9px;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.nav-tab .tab-day {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.nav-tab .tab-date {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.nav-tab:hover {
+  background: rgba(118, 118, 128, 0.14);
+}
+
+.nav-tab.active {
+  background: #ffffff;
+  border-color: rgba(60, 60, 67, 0.12);
+  color: #007aff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.nav-tab.active .tab-day {
+  color: #007aff;
+}
+.nav-tab.active .tab-date {
+  color: #007aff;
+}
+
+/* Layout Container */
+.main-container {
+  max-width: 1060px;
+  margin: 14px auto;
+  padding: 0 20px;
+}
+
+/* Search Bar & Filter Controls */
+.filter-bar {
+  background: #ffffff;
+  border: 1px solid rgba(60, 60, 67, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-box input {
+  width: 100%;
+  background: #f2f2f7;
+  border: 1px solid transparent;
+  padding: 6px 12px 6px 34px;
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.82rem;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.search-box input:focus {
+  background: #ffffff;
+  border-color: #007aff;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+}
+
+.search-box svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  width: 14px;
+  height: 14px;
+}
+
+.filter-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  background: #f2f2f7;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-tag:hover, .filter-tag.active {
+  background: #e5e5ea;
+  color: var(--text-main);
+}
+
+.filter-tag.active[data-cat="flight"] { background: #e5f1ff; color: #007aff; }
+.filter-tag.active[data-cat="transport"] { background: #f3e8ff; color: #5856d6; }
+.filter-tag.active[data-cat="hotel"] { background: #e0f8e9; color: #34c759; }
+.filter-tag.active[data-cat="meeting"] { background: #e5f1ff; color: #007aff; }
+.filter-tag.active[data-cat="food"] { background: #fff4e5; color: #ff9500; }
+
+/* Day Header Banner (Apple Minimal Card) */
+.day-banner {
+  background: #ffffff;
+  border: 1px solid rgba(60, 60, 67, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.day-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #007aff;
+}
+
+.day-banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.day-banner-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #007aff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.day-banner-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2px;
+}
+
+.day-banner-desc {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.day-banner-stats {
+  display: flex;
+  gap: 10px;
+}
+
+.stat-pill {
+  background: #f2f2f7;
+  border: 1px solid rgba(60, 60, 67, 0.06);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-pill svg {
+  color: #007aff;
+  width: 14px;
+  height: 14px;
+}
+
+.stat-val {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text-main);
+}
+.stat-lbl {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+}
+
+/* Timeline Layout (Apple Slim Timeline) */
+.timeline-container {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: rgba(60, 60, 67, 0.12);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -20px;
+  top: 16px;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #007aff;
+  z-index: 2;
+}
+
+.timeline-card {
+  background: #ffffff;
+  border: 1px solid rgba(60, 60, 67, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 12px 16px;
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.timeline-card:hover {
+  border-color: rgba(60, 60, 67, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.time-badge {
+  background: rgba(0, 122, 255, 0.08);
+  border: 1px solid rgba(0, 122, 255, 0.15);
+  color: #007aff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 2px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-tag {
+  background: #f2f2f7;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-tag.flight { background: #e5f1ff; color: #007aff; }
+.badge-tag.transport { background: #f3e8ff; color: #5856d6; }
+.badge-tag.hotel { background: #e0f8e9; color: #34c759; }
+.badge-tag.meeting { background: #e5f1ff; color: #007aff; }
+.badge-tag.food { background: #fff4e5; color: #ff9500; }
+
+.card-title-group {
+  margin-top: 0;
+}
+
+.event-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.event-icon-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.event-icon-badge.transport { background: #f3e8ff; color: #5856d6; }
+.event-icon-badge.food { background: #fff4e5; color: #ff9500; }
+.event-icon-badge.flight { background: #e5f1ff; color: #007aff; }
+.event-icon-badge.hotel { background: #e0f8e9; color: #34c759; }
+.event-icon-badge.meeting { background: #e5f1ff; color: #007aff; }
+.event-icon-badge.process { background: #f2f2f7; color: #8e8e93; }
+.event-icon-badge.rest { background: #fff4e5; color: #ff9500; }
+
+.card-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.card-title-en {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.card-details {
+  font-size: 0.84rem;
+  color: #2c2c2e;
+  background: #f2f2f7;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border-left: 2.5px solid #007aff;
+}
+
+/* Taxi Card & Japanese Address Box */
+.jp-address-box {
+  margin-top: 4px;
+  background: #fff8e6;
+  border: 1px dashed #ff9500;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.jp-address-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #804b00;
+}
+
+.jp-address-lbl {
+  font-size: 0.68rem;
+  color: #ff9500;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn-copy {
+  background: #fff4e5;
+  border: 1px solid #ff9500;
+  color: #d97706;
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  transition: var(--transition-fast);
+}
+
+.btn-copy:hover {
+  background: #ff9500;
+  color: #ffffff;
+}
+
+/* Card External Links */
+.card-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.btn-action {
+  background: #f2f2f7;
+  border: 1px solid transparent;
+  color: var(--text-main);
+  padding: 5px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.btn-action:hover {
+  background: #e5e5ea;
+  color: #007aff;
+}
+
+.btn-action.primary {
+  background: #e5f1ff;
+  color: #007aff;
+  font-weight: 700;
+}
+.btn-action.primary:hover {
+  background: #007aff;
+  color: #ffffff;
+}
+
+/* Overview Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dash-card {
+  background: #ffffff;
+  border: 1px solid rgba(60, 60, 67, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.dash-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dash-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #000000;
+}
+
+.dash-card-title svg {
+  color: #007aff;
+  width: 16px;
+  height: 16px;
+}
+
+/* Countdown Widget */
+.countdown-box {
+  display: flex;
+  gap: 8px;
+  justify-content: space-around;
+  text-align: center;
+  background: #f2f2f7;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(60, 60, 67, 0.06);
+}
+
+.cd-number {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #007aff;
+}
+.cd-label {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Flight Boarding Pass Component */
+.boarding-pass {
+  background: #ffffff;
+  border: 1px solid rgba(0, 122, 255, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0, 122, 255, 0.05);
+  margin-bottom: 10px;
+}
+
+.pass-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(60, 60, 67, 0.12);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.pass-airline {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #007aff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pass-pnr {
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.pass-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pass-code {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #000000;
+}
+.pass-city {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.pass-path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  padding: 0 12px;
+}
+
+.pass-path svg {
+  color: #007aff;
+  width: 14px;
+  height: 14px;
+}
+
+.pass-line {
+  width: 100%;
+  height: 1.5px;
+  background: #007aff;
+  opacity: 0.3;
+}
+
+.pass-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: #f2f2f7;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+}
+
+.pass-lbl {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.pass-val {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.pass-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+/* Hotel Cards */
+.hotel-card {
+  background: #ffffff;
+  border: 1px solid rgba(60, 60, 67, 0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.hotel-card:hover {
+  border-color: rgba(60, 60, 67, 0.18);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.hotel-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #000000;
+}
+
+.hotel-jp {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+}
+
+.hotel-dates {
+  font-size: 0.72rem;
+  color: #34c759;
+  font-weight: 700;
+  background: #e0f8e9;
+  padding: 2px 8px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+/* Toast Notifications (Apple Capsule Toast) */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.toast {
+  background: rgba(28, 28, 30, 0.92);
+  backdrop-filter: blur(16px);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Modal Window (Apple Sheet/Modal) */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-fast);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #ffffff;
+  border: 1px solid rgba(60, 60, 67, 0.12);
+  border-radius: var(--radius-xl);
+  max-width: 520px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transform: scale(0.96);
+  transition: var(--transition-fast);
+}
+
+.modal-backdrop.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #f2f2f7;
+  border: none;
+  color: var(--text-dim);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: #e5e5ea;
+  color: var(--text-main);
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .app-header, .filter-bar, .top-actions, .btn-copy, .btn-action {
+    display: none !important;
+  }
+  .timeline-card, .dash-card, .day-banner {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 8px 14px;
+  }
+  .sub-nav {
+    padding: 6px 12px 10px 12px;
+  }
+  .brand-title {
+    font-size: 0.95rem;
+  }
+  .main-container {
+    padding: 0 12px;
+  }
+  .day-banner {
+    padding: 14px;
+  }
+  .day-banner-title {
+    font-size: 1.1rem;
+  }
+  .timeline-card {
+    padding: 10px 12px;
+  }
+}
