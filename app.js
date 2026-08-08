@@ -1,5 +1,5 @@
 /**
- * NGO2026 - Japan Business & Travel Application Logic
+ * Admin Meeting @Japan : 4-9 Sep 2026 Application Logic
  */
 
 let currentTab = 'overview';
@@ -80,7 +80,7 @@ function renderOverviewHTML() {
   const cdHours = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
   const cdMins = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
 
-  // Boarding Passes HTML
+  // Flight Itinerary Cards HTML
   const flightsHTML = data.flights.map(f => `
     <div class="boarding-pass" onclick="openFlightModal('${f.id}')" style="cursor:pointer;" title="Click to inspect flight details">
       <div class="pass-header">
@@ -121,7 +121,7 @@ function renderOverviewHTML() {
         </div>
       </div>
       <div class="pass-footer">
-        <span>Click for digital boarding pass modal</span>
+        <span>Click for digital itinerary modal</span>
         <i data-lucide="chevron-right"></i>
       </div>
     </div>
@@ -179,8 +179,8 @@ function renderOverviewHTML() {
       <div class="day-banner-content">
         <div>
           <div class="day-banner-tag">Overview Dashboard</div>
-          <h1 class="day-banner-title">NGO2026 Japan Travel</h1>
-          <p class="day-banner-desc">กำหนดการเดินทางประเทศญี่ปุ่น 7 วัน (3 กันยายน 2026 - 9 กันยายน 2026)</p>
+          <h1 class="day-banner-title">Admin Meeting @Japan : 4-9 Sep 2026</h1>
+          <p class="day-banner-desc">กำหนดการ Admin Meeting @Japan (4 กันยายน 2026 - 9 กันยายน 2026)</p>
         </div>
 
         <div class="countdown-box">
@@ -300,7 +300,7 @@ function renderDayHTML(dayId) {
             ` : ''}
             ${(e.category === 'flight' || e.badge?.includes('Flight') || e.badge?.includes('Check-in')) ? `
               <button class="btn-action" onclick="openFlightModal('${dayId.includes('0') || dayId.includes('1') ? 'flight-outbound' : 'flight-inbound'}')">
-                <i data-lucide="ticket"></i> Boarding Pass
+                <i data-lucide="ticket"></i> Itinerary
               </button>
             ` : ''}
           </div>
@@ -449,7 +449,7 @@ function openFlightModal(flightId) {
   body.innerHTML = `
     <div style="text-align:center; margin-bottom:20px;">
       <span class="flag-badge">✈️</span>
-      <h2 style="font-size:1.4rem; font-weight:800; color:var(--text-main); margin-top:8px;">Digital Boarding Pass</h2>
+      <h2 style="font-size:1.4rem; font-weight:800; color:var(--text-main); margin-top:8px;">Digital Itinerary</h2>
       <div style="color:var(--cyan-accent); font-weight:700; font-size:0.9rem;">${flight.flightNo} • ${flight.airline} (${flight.passengers.length} Travelers)</div>
     </div>
 
@@ -490,7 +490,7 @@ function openFlightModal(flightId) {
 
       <div style="text-align:center; padding:16px 0 0 0; border-top:1px dashed var(--border-glass);">
         <div style="font-family:monospace; font-size:1.6rem; letter-spacing:4px; color:var(--text-muted);">||||| ||| ||||||| ||||| ||</div>
-        <div style="font-size:0.7rem; color:var(--text-dim); margin-top:4px;">ELECTRONIC BOARDING PASS • NGO2026</div>
+        <div style="font-size:0.7rem; color:var(--text-dim); margin-top:4px;">ELECTRONIC ITINERARY • Admin Meeting @Japan : 4-9 Sep 2026</div>
       </div>
     </div>
   `;

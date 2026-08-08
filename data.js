@@ -1,6 +1,6 @@
 /**
- * NGO2026 - Japan Business & Travel Itinerary Data
- * Date Range: 3 September 2026 - 9 September 2026 (Day 0 - Day 6)
+ * Admin Meeting @Japan : 4-9 Sep 2026
+ * Date Range: 4 September 2026 - 9 September 2026 (Day 0 - Day 6)
  */
 
 window.TRIP_DATA = {
@@ -125,7 +125,7 @@ window.TRIP_DATA = {
           titleEN: "Check-in & Baggage Drop (TG 644)",
           category: "flight",
           icon: "plane",
-          details: "Check in at Thai Airways International Counter (Row H/J), drop checked luggage, and receive physical boarding passes.",
+          details: "Check in at Thai Airways International Counter (Row H/J), drop checked luggage, and receive flight tickets & itinerary.",
           badge: "Flight Check-in"
         },
         {
@@ -201,7 +201,7 @@ window.TRIP_DATA = {
           category: "transport",
           icon: "bus",
           details: "Board Meitetsu Bus from Chubu Centrair Intl Airport Terminal 1 to Toyotashi Station (10:50 AM - 12:05 PM, ~1 hr 15 mins).",
-          link: "https://www.meitetsu-bus.co.jp/express/toyota/#time",
+          link: "https://www.meitetsu-bus.co.jp/airport/toyota/#time",
           linkText: "View Meitetsu Bus Schedule",
           badge: "Limousine Bus"
         },
@@ -237,29 +237,14 @@ window.TRIP_DATA = {
         },
         {
           time: "13:30",
-          title: "Move to Nagoya Station area",
-          titleEN: "Travel to Nagoya Station",
-          category: "transport",
-          icon: "train",
-          details: "Head to station platform for local transit.",
-          badge: "Transit"
-        },
-        {
-          time: "13:53",
-          title: "Toyotashi Station → Meitetsu Toyota Line → Kanamoto Station",
-          titleEN: "Train Transit to Kanamoto",
-          category: "transport",
-          icon: "subway",
-          details: "Take Meitetsu Toyota Line local train from Toyotashi Station to Kanamoto Station.",
-          badge: "Meitetsu Line"
-        },
-        {
-          time: "14:30",
           title: "Taxi to Accretech Nagoya",
           titleEN: "Taxi to Accretech Nagoya Facility",
           category: "meeting",
           icon: "taxi",
-          details: "Take taxi from station to Accretech Nagoya branch (10 mins, approx 4.3 km).",
+          details: "Take taxi from station to Accretech Nagoya branch (17 mins, approx 8 km).",
+          addressJP: "〒470-0151 愛知県愛知郡東郷町大字諸輪字東諸輪5",
+          link: "https://maps.app.goo.gl/gBybLhAPAiBLjNTp6",
+          linkText: "View Accretech Nagoya",
           badge: "Accretech Visit"
         },
         {
@@ -722,7 +707,7 @@ window.TRIP_DATA = {
           titleEN: "Check-in & Baggage Drop",
           category: "flight",
           icon: "plane",
-          details: "Check in at Thai Airways Counter, receive boarding passes for TG 677, and drop luggage.",
+          details: "Check in at Thai Airways Counter, receive flight tickets & itinerary for TG 677, and drop luggage.",
           badge: "Check-in TG 677"
         },
         {
